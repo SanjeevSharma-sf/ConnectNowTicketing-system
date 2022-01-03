@@ -1,0 +1,56 @@
+### user sign up endpoint
+POST http://localhost:3001/v1/user
+Content-Type: application/json
+
+{
+    "name": "Sanjeev Sharma",
+    "company": "Company name",
+    "address": "Rajiv Chowk",
+    "phone": "000000000",
+    "email": "abcde@g.com",
+    "password": "secret12345"
+}
+
+### user  login sign up endpoint
+POST http://localhost:3001/v1/user/login
+Content-Type: application/json
+
+{
+    "email": "abcde@g.com",
+    "password": "secret12345"
+}
+
+
+### Get a user profile endpoint
+GET http://localhost:3001/v1/user/login
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFiY2RlQGcuY29tIiwiaWF0IjoxNjA3MTc1OTYxLCJleHAiOjE2MDcxNzY4NjF9.kaieDa5QC6BtfAiAZlEdgoFGnjyXnviXWFj6XNy8WkM
+
+
+###Token routers
+
+###Get refreshed token
+GET http://localhost:3001/v1/tokens
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFiY2RlQGcuY29tIiwiaWF0IjoxNjA3MTc1OTYxLCJleHAiOjE2MDk3Njc5NjF9.HNfGVBzutjDmp32mYceKMYJ1d_TCe-nEakjOYAJW4tc
+
+
+### passwrd reset endpoint
+POST http://localhost:3001/v1/user/reset-password
+Content-Type: application/json
+
+{
+    "email": "abcde@g.com",
+}
+
+### update new password endpoint
+PATCH http://localhost:3001/v1/user/reset-password
+Content-Type: application/json
+
+{
+    "email": "abcde@g.com",
+    "pin": 218679,
+    "newPassword": "password1"
+}
+
+### user logout endpoint
+DELETE http://localhost:3001/v1/user/logout
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImUyQGUuY29tIiwiaWF0IjoxNjA2NTU0NzM4LCJleHAiOjE2MDY1NTU2Mzh9.djVukgIspM0bAjajetdvHzKKit9o0P-ER8N-7Np914U
